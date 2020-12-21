@@ -26,6 +26,7 @@
     "build": "make build"
   },
   "dependencies": {
+    "ts-morph": "^9.1.0",
     "@gratico/microkernel": "0.8.2"
   },
   "peerDependencies": {},

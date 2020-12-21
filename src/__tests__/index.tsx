@@ -1,5 +1,5 @@
 import { Project, PropertyDeclaration, TypeReferenceNode } from "ts-morph";
-import { toSimpleType } from "../../../ts-simple-type/src/index";
+import { toSimpleType } from "../ts-simple-type/index";
 import ts from "typescript";
 import path from "path";
 export async function run() {
