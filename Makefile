@@ -8,6 +8,7 @@ install:
 
 .PHONY: test
 test:
+	yarn --cwd ./src/__tests__/__fixtures__
 	./node_modules/.bin/jest --runInBand
 
 .PHONY: build
