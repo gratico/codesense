@@ -1,0 +1,2488 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="/_/static/customhash/hub/images/favicon.png" />
+	<title>TypeCheckerWithInternals | test-project</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@oss-stealth/hub@0.0.2/fonts/GTWalsheimPro/GTWalsheimPro.css"
+	/>
+	<link
+	href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:400,700|Roboto|Source+Code+Pro|Source+Sans+Pro&display=swap"
+	rel="stylesheet"
+	/>
+	<link
+	href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap"
+	rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<style>
+      .gratico-header {
+        height: 30px;
+        background: white;
+      }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-weight: normal;
+          font-family: "GT Walsheim Pro";
+          line-height: 1.2;
+        }
+
+        a {
+          font-family: "Open Sans";
+          font-weight: normal;
+          color: #4da6ff;
+        }
+
+        a:hover,
+        a:focus {
+          text-decoration: underline;
+        }
+
+        html {
+          background: #eef7fd;
+        }
+
+        body {
+          font-family: "Open Sans";
+    background: transparent;
+        }
+
+        p {
+          line-height: 1.5;
+
+        }
+
+        blockquote {
+          padding: 1em 40px;
+    background: rgba(255,255,255,0.6);
+          margin: 10px 0;
+          border: 1px solid #ddd;
+        }
+
+        *::-webkit-scrollbar {
+          width: 5px;
+          height: 8px;
+          background-color: #ccc;
+          /* or add it to the track */
+        }
+
+        *::-webkit-scrollbar-thumb {
+          background: #555;
+        }
+
+        body>header {
+          position: sticky;
+          top: 0;
+          z-index: 99999999;
+          background: #eef7fd;
+
+        }
+
+        .tsd-panel.tsd-typography li {
+          padding: 10px 0;
+          line-height: 1.5;
+        }
+
+        .tsd-page-title {
+          padding: 10px;
+          margin: 0;
+          background: transparent;
+          box-shadow: none;
+          border-bottom: none;
+          background: transparent;
+          /* position: sticky; */
+          /* top: 0; */
+          /* z-index: 99999999; */
+        }
+
+        .tsd-page-toolbar {
+          border-bottom: none;
+          overflow: hidden;
+          padding-right: 20px;
+          box-sizing: border-box;
+          background: white;
+        }
+
+        #tsd-search>div,
+        #tsd-search>ul {}
+
+        #tsd-widgets {}
+
+        .tsd-breadcrumb {}
+
+        .tsd-page-toolbar {}
+
+        .tsd-breadcrumb a {
+          color: #4da6ff;
+          text-decoration: inherit;
+        }
+
+        .tsd-page-toolbar {
+          position: relative;
+        }
+
+        .tsd-page-toolbar--hide {
+          transform: translateY(0%);
+        }
+
+        .tsd-panel {
+          box-shadow: none;
+          background: transparent;
+        }
+
+        .tsd-panel>h1,
+        .tsd-panel>h2,
+        .tsd-panel>h3 {
+          margin: 1.5em -20px 10px -20px;
+          padding: 10px 20px 10px 20px;
+          border-bottom: 1px solid #ddd;
+          background: white;
+          font-weight: normal;
+        }
+
+        .tsd-kind-icon {
+          display: block;
+          position: relative;
+          padding-left: 0;
+          text-indent: 0;
+          white-space: normal;
+          word-break: break-all;
+          padding: 4px 10px;
+        }
+
+        .container.tsd-generator {
+          display: none;
+        }
+
+        #tsd-search .title {
+          position: relative;
+          z-index: 2;
+          padding-left: 40px;
+          background: url(/_static/images/logo.svg);
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-position: 5px center;
+          background-size: 30px;
+          height: 30px;
+          display: inline-block;
+          justify-content: flex-start;
+          align-items: center;
+          /* display: flex; */
+          font-weight: normal;
+          line-height: 30px;
+        }
+        .tsd-signature-type {
+          font-style: normal;
+        }
+
+        .tsd-hierarchy .target {
+          font-weight: normal;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 10px 40px;
+        }
+
+        .container {
+          max-width: 1500px;
+        }
+
+
+        @media (min-width: 901px) {
+          .menu-sticky-wrap {
+            position: static;
+            position: sticky;
+            top: 0;
+          }
+
+        }
+        .tsd-navigation.secondary, .tsd-navigation.secondary.tsd-navigation--toolbar-hide {
+            top: 102px;
+        }
+        .tsd-navigation.secondary {
+          max-height: none;
+        }
+        #nprogress {
+            pointer-events: none;
+            z-index: 999999999999999999;
+            position: absolute;
+        }
+        .tsd-navigation.primary li, .tsd-navigation.primary > ul {
+          border: none;
+        }
+.tsd-navigation.primary ul li a {
+    padding-left: 5px;
+    font-family: "Source Code Pro", monospace !important;
+}
+.menu-sticky-wrap {
+    position: static;
+    display: none;
+}
+
+        .tsd-navigation.primary {
+    padding-bottom: 40px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #ffffffa8;
+        }
+        .tsd-navigation {
+          margin: 0;
+        }
+
+        body>header, .tsd-page-title {
+    background: white;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+        }
+        .tsd-navigation a {
+          color: inherit;
+          word-break: break-word;
+        }
+        .tsd-breadcrumb {
+          color: inherit;
+        }
+        .tsd-panel>h1, .tsd-panel>h2, .tsd-panel>h3 {
+            background: white;
+            color: #000;
+        }
+footer {
+  border: none;
+  background: transparent;
+}
+.tsd-index-panel a, .tsd-index-panel .tsd-parent-kind-module a {
+    color: #4da6ff;
+}
+.col-content {
+    padding-left: 40px;
+}
+
+  html, body {
+
+    min-height: 100vh;
+    padding-left: 0px;
+    box-sizing: border-box;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSIxMTkwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPjxwYXRoIG9wYWNpdHk9Ii4xIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExODIuMzggMTI4LjE3M2MtMTguNDQgNDIuNDQ3LTUzLjQxIDc1Ljc4NS05Ni45NiA5MS4zNjgtMTA4LjEwNSAzOC42NzctMTg1Ljc3OCAxNDEuMzc4LTE4Ny4zOTQgMjYyLjQ0Ny0yLjA5MSAxNTYuNjk3IDEyMi4yNzQgMjg0LjU3NiAyNzguODk0IDI4Ni41NjMgNDYuOTcuNTk1IDkxLjM1LTEwLjI3NyAxMzAuNTEtMjkuOTk1IDU1LjUtMjcuOTQxIDEyMi4wMy0yMi4zODcgMTcyLjI3IDE0LjE3OUMxNTQ4LjIgODAyLjU5IDE2MzIuNTMgODMyIDE3MjMuNzIgODMyYzIzMS4zMyAwIDQxOC40OC0xODkuMjQxIDQxNS4yNC00MjEuNDM1LTMuMTctMjI3LjIxOS0xODkuNjktNDEwLjQwMy00MTYuODEtNDA5LjU2LTE4Ljk2LjA3LTM3LjYxIDEuNDEtNTUuODkgMy45NDMtMzMuMjYgNC42MDUtNjcuMTItMS40MTUtOTcuMDctMTYuNTk1QzE1MzAuODgtMzEuMDYgMTQ4Ny41Ni00MiAxNDQxLjY4LTQyYy0xMTYuMDkgMC0yMTUuODIgNzAuMDMzLTI1OS4zIDE3MC4xNzN6IiBmaWxsPSIjMDA5QUYxIi8+PHBhdGggb3BhY2l0eT0iLjEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNLTQ4Ny4xODUgNDExLjQ1NWMtMTYuNTE2IDM4LjAyNy00Ny44NTQgNjcuODk0LTg2Ljg4MSA4MS44NTUtOTYuODY0IDM0LjY1LTE2Ni40NjMgMTI2LjY1OC0xNjcuOTExIDIzNS4xMjEtMS44NzMgMTQwLjM4MiAxMDkuNTY3IDI1NC45NDYgMjQ5LjkwMSAyNTYuNzI2IDQyLjA4OC41MzMgODEuODUzLTkuMjA2IDExNi45NDctMjYuODcyIDQ5LjcyOS0yNS4wMzEgMTA5LjM0MS0yMC4wNTYgMTU0LjM2MSAxMi43MDNDLTE1OS4zODUgMTAxNS42NS04My44MjQgMTA0Mi0yLjExIDEwNDJjMjA3LjI3OSAwIDM3NC45NzUtMTY5LjUzNyAzNzIuMDczLTM3Ny41NTVDMzY3LjEyNCA0NjAuODgzIDE5OS45OTIgMjk2Ljc3Mi0zLjUyIDI5Ny41MjdBMzc0LjYwNiAzNzQuNjA2IDAgMCAwLTUzLjYgMzAxLjA2Yy0yOS44MDIgNC4xMjUtNjAuMTQtMS4yNjgtODYuOTc5LTE0Ljg2N0MtMTc0LjkwNyAyNjguODAxLTIxMy43MjcgMjU5LTI1NC44MzggMjU5Yy0xMDQuMDE3IDAtMTkzLjM4NCA2Mi43NDEtMjMyLjM0NyAxNTIuNDU1eiIgZmlsbD0iI0EzNzRENyIvPjxnIG9wYWNpdHk9Ii44OCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik05OTMuMjQyIDY4Mi4yODRsOC4wNzgtNC40Nzh6IiBmaWxsPSIjQTM3NEQ3Ii8+PHBhdGggZD0iTTk5My4yNDIgNjgyLjI4NGw4LjA3OC00LjQ3OCIgc3Ryb2tlPSIjQTM3NEQ3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOTk1LjA0MyA2NzYuMDA1bDQuNDc5IDguMDh6IiBmaWxsPSIjQTM3NEQ3Ii8+PHBhdGggZD0iTTk5NS4wNDMgNjc2LjAwNWw0LjQ3OSA4LjA4IiBzdHJva2U9IiNBMzc0RDciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9nPjxnIG9wYWNpdHk9Ii44MSIgc3Ryb2tlPSIjQTM3NEQ3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTTExMS40MTcgNjgxLjE3N2w4LjkzNi02LjAyN00xMTIuODcxIDY3My42OTZsNi4wMjggOC45MzUiLz48L2c+PGcgb3BhY2l0eT0iLjk2IiBzdHJva2U9IiMwM0NBRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNNzUuNTMzIDUwOC41OTRsOC42MDcgNi40ODdNODMuMDggNTA3LjUzM2wtNi40ODYgOC42MDgiLz48L2c+PGcgb3BhY2l0eT0iLjkyIiBzdHJva2U9IiMwM0NBRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNMTY5LjgyIDM1MC4wMjhsLTIuOTgxIDExLjk1Mk0xNzQuMzA2IDM1Ny40OTRsLTExLjk1My0yLjk3OSIvPjwvZz48ZyBvcGFjaXR5PSIuOTkiIHN0cm9rZT0iIzAzQ0FGRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0xMjE0LjM2IDcxMy45MjdsNi4xMi0uNjQ0TTEyMTcuMSA3MTAuNTQybC42NCA2LjEyNiIvPjwvZz48ZyBvcGFjaXR5PSIuOTQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEzNS45OCA0MDIuMDQ4bC02Ljg3LTYuMTgyeiIgZmlsbD0iI0EzNzRENyIvPjxwYXRoIGQ9Ik0xMTM1Ljk4IDQwMi4wNDhsLTYuODctNi4xODIiIHN0cm9rZT0iI0EzNzRENyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExMjkuNDUgNDAyLjM5bDYuMTgtNi44NjZ6IiBmaWxsPSIjQTM3NEQ3Ii8+PHBhdGggZD0iTTExMjkuNDUgNDAyLjM5bDYuMTgtNi44NjYiIHN0cm9rZT0iI0EzNzRENyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L2c+PHBhdGggZD0iTTEwMjcuNDQgNTIwLjQ3Mmw2LjE2LjAwMU0xMDMwLjUyIDUxNy4zOTN2Ni4xNTkiIHN0cm9rZT0iIzAzQ0FGRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZyBvcGFjaXR5PSIuOTEiIHN0cm9rZT0iI0EzNzRENyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0zMjQuOTcgNDIyLjU2N2wtLjkzNy03LjY0MU0zMjAuNjgxIDQxOS4yMTZsNy42NDEtLjkzOSIvPjwvZz48ZyBvcGFjaXR5PSIuNzgiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOTM0Ljg1MiAzNjQuMjY2bDcuMzYzIDIuMjUyeiIgZmlsbD0iI0EzNzRENyIvPjxwYXRoIGQ9Ik05MzQuODUyIDM2NC4yNjZsNy4zNjMgMi4yNTIiIHN0cm9rZT0iI0EzNzRENyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTkzOS42NTkgMzYxLjcxMWwtMi4yNTEgNy4zNjN6IiBmaWxsPSIjQTM3NEQ3Ii8+PHBhdGggZD0iTTkzOS42NTkgMzYxLjcxMWwtMi4yNTEgNy4zNjMiIHN0cm9rZT0iI0EzNzRENyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L2c+PGcgb3BhY2l0eT0iLjk5IiBzdHJva2U9IiMwM0NBRkYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj48cGF0aCBkPSJNNDkyLjY3IDcxOC42NjNsNC4xOTMtNi40NTZNNDkxLjUzOCA3MTMuMzM5bDYuNDU3IDQuMTkyIi8+PC9nPjxnIG9wYWNpdHk9Ii44NCIgc3Ryb2tlPSIjMDNDQUZGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PHBhdGggZD0iTTM5OC44MDMgNzM2LjM1Nmw1LjcxMS0yLjMwN000MDAuNTA1IDczMi4zNDdsMi4zMDggNS43MSIvPjwvZz48ZyBvcGFjaXR5PSIuOTQiIHN0cm9rZT0iIzAzQ0FGRiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0yNTUuMjE1IDYzOC4yMDlsLTkuMTQ5IDEuMjg2TTI1MS4yODQgNjQzLjQyN2wtMS4yODctOS4xNDkiLz48L2c+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMTU2LjUxIDgxNi4zMzZhMy44NDUgMy44NDUgMCAwIDAtNC4xNyAzLjUwMSAzLjg0OCAzLjg0OCAwIDAgMCAzLjUgNC4xNzQgMy44NTIgMy44NTIgMCAwIDAgLjY3LTcuNjc1eiIgZmlsbD0iIzAzQ0FGRiIgb3BhY2l0eT0iLjkxIi8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMTU4LjE0IDU5Ny45NTFhMy4yMSAzLjIxIDAgMSAwIDYuMi0xLjY2MSAzLjIgMy4yIDAgMCAwLTMuOTMtMi4yNyAzLjIxIDMuMjEgMCAwIDAtMi4yNyAzLjkzMXoiIGZpbGw9IiNBMzc0RDciIG9wYWNpdHk9Ii45MyIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTA4NC40NSAzMjMuNzE3YTEuOTM0IDEuOTM0IDAgMCAwLTIuNzEtLjMzMiAxLjkyOCAxLjkyOCAwIDAgMC0uMzMgMi43MDNjLjY2LjgzOSAxLjg3Ljk4NyAyLjcuMzMyYTEuOTMgMS45MyAwIDAgMCAuMzQtMi43MDN6IiBmaWxsPSIjMDNDQUZGIiBvcGFjaXR5PSIuNzYiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMzOC4xMjEgOTQwLjAwOWEyLjU3IDIuNTcgMCAwIDAtMy41MDMgMy43NTYgMi41NjggMi41NjggMCAxIDAgMy41MDMtMy43NTZ6IiBmaWxsPSIjMDNDQUZGIiBvcGFjaXR5PSIuODIiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI5NC4wMTYgNDk5LjE1OWEyLjU2OCAyLjU2OCAwIDEgMCA1LjEwOC0uNTM2IDIuNTY4IDIuNTY4IDAgMCAwLTUuMTA4LjUzNnoiIGZpbGw9IiMwM0NBRkYiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExOS4xNzYgODkyLjg1NGEyLjU2OSAyLjU2OSAwIDEgMC00LjY5My0yLjA5IDIuNTY5IDIuNTY5IDAgMCAwIDQuNjkzIDIuMDl6IiBmaWxsPSIjMDNDQUZGIiBvcGFjaXR5PSIuODgiLz48L2c+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgxMjgwdjExOTBIMHoiLz48L2NsaXBQYXRoPjwvZGVmcz48L3N2Zz4=") 0px 40px / 100% no-repeat fixed rgb(246, 249, 252);
+    color: black;
+    font-family: "Open Sans";
+  }
+
+    </style>
+	<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+	<script src='https://unpkg.com/nprogress@0.2.0/nprogress.js'></script>
+	<link rel='stylesheet' href='https://unpkg.com/nprogress@0.2.0/nprogress.css'/>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="">
+			<div class="table-wrap gratico-header">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a  href="/" class="title">test-project</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html" class="title">Developer Home</a>
+				</li>
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_type_.html">&quot;ts-simple-type/is-assignable/is-assignable-to-type&quot;</a>
+				</li>
+				<li>
+					<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>
+				</li>
+				<li>
+				Interface TypeCheckerWithInternals                </li>
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/___tests_____fixtures___src_file0_.html">&quot;__tests__/__fixtures__/src/file0&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/___tests_____fixtures___src_index_.html">&quot;__tests__/__fixtures__/src/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/___tests___index_.html">&quot;__tests__/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_serializer_index_.html">&quot;serializer/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_constants_.html">&quot;ts-<wbr>simple-<wbr>type/constants&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_index_.html">&quot;ts-<wbr>simple-<wbr>type/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_primitive_type_.html">&quot;ts-<wbr>simple-<wbr>type/is-<wbr>assignable/is-<wbr>assignable-<wbr>to-<wbr>primitive-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_simple_type_.html">&quot;ts-<wbr>simple-<wbr>type/is-<wbr>assignable/is-<wbr>assignable-<wbr>to-<wbr>simple-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_simple_type_kind_.html">&quot;ts-<wbr>simple-<wbr>type/is-<wbr>assignable/is-<wbr>assignable-<wbr>to-<wbr>simple-<wbr>type-<wbr>kind&quot;</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_type_.html">&quot;ts-<wbr>simple-<wbr>type/is-<wbr>assignable/is-<wbr>assignable-<wbr>to-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_value_.html">&quot;ts-<wbr>simple-<wbr>type/is-<wbr>assignable/is-<wbr>assignable-<wbr>to-<wbr>value&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_simple_type_comparison_options_.html">&quot;ts-<wbr>simple-<wbr>type/is-<wbr>assignable/simple-<wbr>type-<wbr>comparison-<wbr>options&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_simple_type_.html">&quot;ts-<wbr>simple-<wbr>type/simple-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_transform_serialize_simple_type_.html">&quot;ts-<wbr>simple-<wbr>type/transform/serialize-<wbr>simple-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_transform_simple_type_to_string_.html">&quot;ts-<wbr>simple-<wbr>type/transform/simple-<wbr>type-<wbr>to-<wbr>string&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_transform_to_simple_type_.html">&quot;ts-<wbr>simple-<wbr>type/transform/to-<wbr>simple-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_transform_type_to_string_.html">&quot;ts-<wbr>simple-<wbr>type/transform/type-<wbr>to-<wbr>string&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_ts_module_.html">&quot;ts-<wbr>simple-<wbr>type/ts-<wbr>module&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_utils_list_util_.html">&quot;ts-<wbr>simple-<wbr>type/utils/list-<wbr>util&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_utils_resolve_type_.html">&quot;ts-<wbr>simple-<wbr>type/utils/resolve-<wbr>type&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_utils_simple_type_util_.html">&quot;ts-<wbr>simple-<wbr>type/utils/simple-<wbr>type-<wbr>util&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_utils_ts_util_.html">&quot;ts-<wbr>simple-<wbr>type/utils/ts-<wbr>util&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_ts_simple_type_utils_validate_type_.html">&quot;ts-<wbr>simple-<wbr>type/utils/validate-<wbr>type&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html" class="tsd-kind-icon">Type<wbr>Checker<wbr>With<wbr>Internals</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getaliasedsymbol" class="tsd-kind-icon">get<wbr>Aliased<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getambientmodules" class="tsd-kind-icon">get<wbr>Ambient<wbr>Modules</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getapparenttype" class="tsd-kind-icon">get<wbr>Apparent<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getaugmentedpropertiesoftype" class="tsd-kind-icon">get<wbr>Augmented<wbr>Properties<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbaseconstraintoftype" class="tsd-kind-icon">get<wbr>Base<wbr>Constraint<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbasetypeofliteraltype" class="tsd-kind-icon">get<wbr>Base<wbr>Type<wbr>OfLiteral<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbasetypes" class="tsd-kind-icon">get<wbr>Base<wbr>Types</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getconstantvalue" class="tsd-kind-icon">get<wbr>Constant<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getcontextualtype" class="tsd-kind-icon">get<wbr>Contextual<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getdeclaredtypeofsymbol" class="tsd-kind-icon">get<wbr>Declared<wbr>Type<wbr>OfSymbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getdefaultfromtypeparameter" class="tsd-kind-icon">get<wbr>Default<wbr>From<wbr>Type<wbr>Parameter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportspecifierlocaltargetsymbol" class="tsd-kind-icon">get<wbr>Export<wbr>Specifier<wbr>Local<wbr>Target<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportsymbolofsymbol" class="tsd-kind-icon">get<wbr>Export<wbr>Symbol<wbr>OfSymbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportsofmodule" class="tsd-kind-icon">get<wbr>Exports<wbr>OfModule</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getfullyqualifiedname" class="tsd-kind-icon">get<wbr>Fully<wbr>Qualified<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getindexinfooftype" class="tsd-kind-icon">get<wbr>Index<wbr>Info<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getindextypeoftype" class="tsd-kind-icon">get<wbr>Index<wbr>Type<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getjsxintrinsictagnamesat" class="tsd-kind-icon">get<wbr>Jsx<wbr>Intrinsic<wbr>Tag<wbr>Names<wbr>At</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getnonnullabletype" class="tsd-kind-icon">get<wbr>Non<wbr>Nullable<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getnullabletype" class="tsd-kind-icon">get<wbr>Nullable<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getprivateidentifierpropertyoftype" class="tsd-kind-icon">get<wbr>Private<wbr>Identifier<wbr>Property<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertiesoftype" class="tsd-kind-icon">get<wbr>Properties<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertyoftype" class="tsd-kind-icon">get<wbr>Property<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertysymbolofdestructuringassignment" class="tsd-kind-icon">get<wbr>Property<wbr>Symbol<wbr>OfDestructuring<wbr>Assignment</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getresolvedsignature" class="tsd-kind-icon">get<wbr>Resolved<wbr>Signature</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getreturntypeofsignature" class="tsd-kind-icon">get<wbr>Return<wbr>Type<wbr>OfSignature</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getrootsymbols" class="tsd-kind-icon">get<wbr>Root<wbr>Symbols</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getshorthandassignmentvaluesymbol" class="tsd-kind-icon">get<wbr>Shorthand<wbr>Assignment<wbr>Value<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsignaturefromdeclaration" class="tsd-kind-icon">get<wbr>Signature<wbr>From<wbr>Declaration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsignaturesoftype" class="tsd-kind-icon">get<wbr>Signatures<wbr>OfType</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolatlocation" class="tsd-kind-icon">get<wbr>Symbol<wbr>AtLocation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolofexpando" class="tsd-kind-icon">get<wbr>Symbol<wbr>OfExpando</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolsinscope" class="tsd-kind-icon">get<wbr>Symbols<wbr>InScope</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolsofparameterpropertydeclaration" class="tsd-kind-icon">get<wbr>Symbols<wbr>OfParameter<wbr>Property<wbr>Declaration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypearguments" class="tsd-kind-icon">get<wbr>Type<wbr>Arguments</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeatlocation" class="tsd-kind-icon">get<wbr>Type<wbr>AtLocation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypefromtypenode" class="tsd-kind-icon">get<wbr>Type<wbr>From<wbr>Type<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeofassignmentpattern" class="tsd-kind-icon">get<wbr>Type<wbr>OfAssignment<wbr>Pattern</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeofsymbolatlocation" class="tsd-kind-icon">get<wbr>Type<wbr>OfSymbol<wbr>AtLocation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getwidenedtype" class="tsd-kind-icon">get<wbr>Widened<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#indexinfotoindexsignaturedeclaration" class="tsd-kind-icon">index<wbr>Info<wbr>ToIndex<wbr>Signature<wbr>Declaration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isargumentssymbol" class="tsd-kind-icon">is<wbr>Arguments<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isimplementationofoverload" class="tsd-kind-icon">is<wbr>Implementation<wbr>OfOverload</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isoptionalparameter" class="tsd-kind-icon">is<wbr>Optional<wbr>Parameter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#istypeassignableto" class="tsd-kind-icon">is<wbr>Type<wbr>Assignable<wbr>To</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isundefinedsymbol" class="tsd-kind-icon">is<wbr>Undefined<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isunknownsymbol" class="tsd-kind-icon">is<wbr>Unknown<wbr>Symbol</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isvalidpropertyaccess" class="tsd-kind-icon">is<wbr>Valid<wbr>Property<wbr>Access</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#runwithcancellationtoken" class="tsd-kind-icon">run<wbr>With<wbr>Cancellation<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#signaturetosignaturedeclaration" class="tsd-kind-icon">signature<wbr>ToSignature<wbr>Declaration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#signaturetostring" class="tsd-kind-icon">signature<wbr>ToString</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoentityname" class="tsd-kind-icon">symbol<wbr>ToEntity<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoexpression" class="tsd-kind-icon">symbol<wbr>ToExpression</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoparameterdeclaration" class="tsd-kind-icon">symbol<wbr>ToParameter<wbr>Declaration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltostring" class="tsd-kind-icon">symbol<wbr>ToString</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltotypeparameterdeclarations" class="tsd-kind-icon">symbol<wbr>ToType<wbr>Parameter<wbr>Declarations</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#trygetmemberinmoduleexports" class="tsd-kind-icon">try<wbr>Get<wbr>Member<wbr>InModule<wbr>Exports</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typeparametertodeclaration" class="tsd-kind-icon">type<wbr>Parameter<wbr>ToDeclaration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typepredicatetostring" class="tsd-kind-icon">type<wbr>Predicate<wbr>ToString</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typetostring" class="tsd-kind-icon">type<wbr>ToString</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+								<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typetotypenode" class="tsd-kind-icon">type<wbr>ToType<wbr>Node</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/_ts_simple_type_is_assignable_is_assignable_to_type_.html#isassignabletotype" class="tsd-kind-icon">is<wbr>Assignable<wbr>ToType</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-9 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">TypeChecker</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">TypeCheckerWithInternals</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getaliasedsymbol" class="tsd-kind-icon">get<wbr>Aliased<wbr>Symbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getambientmodules" class="tsd-kind-icon">get<wbr>Ambient<wbr>Modules</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getapparenttype" class="tsd-kind-icon">get<wbr>Apparent<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getaugmentedpropertiesoftype" class="tsd-kind-icon">get<wbr>Augmented<wbr>Properties<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbaseconstraintoftype" class="tsd-kind-icon">get<wbr>Base<wbr>Constraint<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbasetypeofliteraltype" class="tsd-kind-icon">get<wbr>Base<wbr>Type<wbr>OfLiteral<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbasetypes" class="tsd-kind-icon">get<wbr>Base<wbr>Types</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getconstantvalue" class="tsd-kind-icon">get<wbr>Constant<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getcontextualtype" class="tsd-kind-icon">get<wbr>Contextual<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getdeclaredtypeofsymbol" class="tsd-kind-icon">get<wbr>Declared<wbr>Type<wbr>OfSymbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getdefaultfromtypeparameter" class="tsd-kind-icon">get<wbr>Default<wbr>From<wbr>Type<wbr>Parameter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportspecifierlocaltargetsymbol" class="tsd-kind-icon">get<wbr>Export<wbr>Specifier<wbr>Local<wbr>Target<wbr>Symbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportsymbolofsymbol" class="tsd-kind-icon">get<wbr>Export<wbr>Symbol<wbr>OfSymbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportsofmodule" class="tsd-kind-icon">get<wbr>Exports<wbr>OfModule</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getfullyqualifiedname" class="tsd-kind-icon">get<wbr>Fully<wbr>Qualified<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getindexinfooftype" class="tsd-kind-icon">get<wbr>Index<wbr>Info<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getindextypeoftype" class="tsd-kind-icon">get<wbr>Index<wbr>Type<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getjsxintrinsictagnamesat" class="tsd-kind-icon">get<wbr>Jsx<wbr>Intrinsic<wbr>Tag<wbr>Names<wbr>At</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getnonnullabletype" class="tsd-kind-icon">get<wbr>Non<wbr>Nullable<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getnullabletype" class="tsd-kind-icon">get<wbr>Nullable<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getprivateidentifierpropertyoftype" class="tsd-kind-icon">get<wbr>Private<wbr>Identifier<wbr>Property<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertiesoftype" class="tsd-kind-icon">get<wbr>Properties<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertyoftype" class="tsd-kind-icon">get<wbr>Property<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertysymbolofdestructuringassignment" class="tsd-kind-icon">get<wbr>Property<wbr>Symbol<wbr>OfDestructuring<wbr>Assignment</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getresolvedsignature" class="tsd-kind-icon">get<wbr>Resolved<wbr>Signature</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getreturntypeofsignature" class="tsd-kind-icon">get<wbr>Return<wbr>Type<wbr>OfSignature</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getrootsymbols" class="tsd-kind-icon">get<wbr>Root<wbr>Symbols</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getshorthandassignmentvaluesymbol" class="tsd-kind-icon">get<wbr>Shorthand<wbr>Assignment<wbr>Value<wbr>Symbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsignaturefromdeclaration" class="tsd-kind-icon">get<wbr>Signature<wbr>From<wbr>Declaration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsignaturesoftype" class="tsd-kind-icon">get<wbr>Signatures<wbr>OfType</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolatlocation" class="tsd-kind-icon">get<wbr>Symbol<wbr>AtLocation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolofexpando" class="tsd-kind-icon">get<wbr>Symbol<wbr>OfExpando</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolsinscope" class="tsd-kind-icon">get<wbr>Symbols<wbr>InScope</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolsofparameterpropertydeclaration" class="tsd-kind-icon">get<wbr>Symbols<wbr>OfParameter<wbr>Property<wbr>Declaration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypearguments" class="tsd-kind-icon">get<wbr>Type<wbr>Arguments</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeatlocation" class="tsd-kind-icon">get<wbr>Type<wbr>AtLocation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypefromtypenode" class="tsd-kind-icon">get<wbr>Type<wbr>From<wbr>Type<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeofassignmentpattern" class="tsd-kind-icon">get<wbr>Type<wbr>OfAssignment<wbr>Pattern</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeofsymbolatlocation" class="tsd-kind-icon">get<wbr>Type<wbr>OfSymbol<wbr>AtLocation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getwidenedtype" class="tsd-kind-icon">get<wbr>Widened<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#indexinfotoindexsignaturedeclaration" class="tsd-kind-icon">index<wbr>Info<wbr>ToIndex<wbr>Signature<wbr>Declaration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isargumentssymbol" class="tsd-kind-icon">is<wbr>Arguments<wbr>Symbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isimplementationofoverload" class="tsd-kind-icon">is<wbr>Implementation<wbr>OfOverload</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isoptionalparameter" class="tsd-kind-icon">is<wbr>Optional<wbr>Parameter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#istypeassignableto" class="tsd-kind-icon">is<wbr>Type<wbr>Assignable<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isundefinedsymbol" class="tsd-kind-icon">is<wbr>Undefined<wbr>Symbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isunknownsymbol" class="tsd-kind-icon">is<wbr>Unknown<wbr>Symbol</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isvalidpropertyaccess" class="tsd-kind-icon">is<wbr>Valid<wbr>Property<wbr>Access</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#runwithcancellationtoken" class="tsd-kind-icon">run<wbr>With<wbr>Cancellation<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#signaturetosignaturedeclaration" class="tsd-kind-icon">signature<wbr>ToSignature<wbr>Declaration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#signaturetostring" class="tsd-kind-icon">signature<wbr>ToString</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoentityname" class="tsd-kind-icon">symbol<wbr>ToEntity<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoexpression" class="tsd-kind-icon">symbol<wbr>ToExpression</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoparameterdeclaration" class="tsd-kind-icon">symbol<wbr>ToParameter<wbr>Declaration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltostring" class="tsd-kind-icon">symbol<wbr>ToString</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltotypeparameterdeclarations" class="tsd-kind-icon">symbol<wbr>ToType<wbr>Parameter<wbr>Declarations</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#trygetmemberinmoduleexports" class="tsd-kind-icon">try<wbr>Get<wbr>Member<wbr>InModule<wbr>Exports</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typeparametertodeclaration" class="tsd-kind-icon">type<wbr>Parameter<wbr>ToDeclaration</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typepredicatetostring" class="tsd-kind-icon">type<wbr>Predicate<wbr>ToString</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typetostring" class="tsd-kind-icon">type<wbr>ToString</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typetotypenode" class="tsd-kind-icon">type<wbr>ToType<wbr>Node</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getaliasedsymbol" class="tsd-anchor"></a>
+					<h3>get<wbr>Aliased<wbr>Symbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Aliased<wbr>Symbol<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getaliasedsymbol">getAliasedSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2226</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Follow all aliases to get the original symbol.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getambientmodules" class="tsd-anchor"></a>
+					<h3>get<wbr>Ambient<wbr>Modules</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Ambient<wbr>Modules<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getambientmodules">getAmbientModules</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2230</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getapparenttype" class="tsd-anchor"></a>
+					<h3>get<wbr>Apparent<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Apparent<wbr>Type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getapparenttype">getApparentType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2232</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getaugmentedpropertiesoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Augmented<wbr>Properties<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Augmented<wbr>Properties<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getaugmentedpropertiesoftype">getAugmentedPropertiesOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2208</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getbaseconstraintoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Base<wbr>Constraint<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base<wbr>Constraint<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbaseconstraintoftype">getBaseConstraintOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2233</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getbasetypeofliteraltype" class="tsd-anchor"></a>
+					<h3>get<wbr>Base<wbr>Type<wbr>OfLiteral<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base<wbr>Type<wbr>OfLiteral<wbr>Type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbasetypeofliteraltype">getBaseTypeOfLiteralType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2157</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getbasetypes" class="tsd-anchor"></a>
+					<h3>get<wbr>Base<wbr>Types</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base<wbr>Types<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InterfaceType</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BaseType</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getbasetypes">getBaseTypes</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2156</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">InterfaceType</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">BaseType</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getconstantvalue" class="tsd-anchor"></a>
+					<h3>get<wbr>Constant<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Constant<wbr>Value<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EnumMember</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PropertyAccessExpression</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ElementAccessExpression</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getconstantvalue">getConstantValue</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2223</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">EnumMember</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PropertyAccessExpression</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ElementAccessExpression</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getcontextualtype" class="tsd-anchor"></a>
+					<h3>get<wbr>Contextual<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Contextual<wbr>Type<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Expression</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getcontextualtype">getContextualType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2211</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Expression</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getdeclaredtypeofsymbol" class="tsd-anchor"></a>
+					<h3>get<wbr>Declared<wbr>Type<wbr>OfSymbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Declared<wbr>Type<wbr>OfSymbol<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getdeclaredtypeofsymbol">getDeclaredTypeOfSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2149</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getdefaultfromtypeparameter" class="tsd-anchor"></a>
+					<h3>get<wbr>Default<wbr>From<wbr>Type<wbr>Parameter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>From<wbr>Type<wbr>Parameter<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getdefaultfromtypeparameter">getDefaultFromTypeParameter</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2234</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getexportspecifierlocaltargetsymbol" class="tsd-anchor"></a>
+					<h3>get<wbr>Export<wbr>Specifier<wbr>Local<wbr>Target<wbr>Symbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Export<wbr>Specifier<wbr>Local<wbr>Target<wbr>Symbol<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ExportSpecifier</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Identifier</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportspecifierlocaltargetsymbol">getExportSpecifierLocalTargetSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2189</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>location: <span class="tsd-signature-type">ExportSpecifier</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Identifier</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getexportsymbolofsymbol" class="tsd-anchor"></a>
+					<h3>get<wbr>Export<wbr>Symbol<wbr>OfSymbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Export<wbr>Symbol<wbr>OfSymbol<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportsymbolofsymbol">getExportSymbolOfSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2198</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If a symbol is a local symbol with an associated exported symbol, returns the exported symbol.
+										Otherwise returns its input.
+										For example, at <code>export type T = number;</code>:
+										- <code>getSymbolAtLocation</code> at the location <code>T</code> will return the exported symbol for <code>T</code>.
+										- But the result of <code>getSymbolsInScope</code> will contain the <em>local</em> symbol for <code>T</code>, not the exported symbol.
+									- Calling <code>getExportSymbolOfSymbol</code> on that local symbol will return the exported symbol.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getexportsofmodule" class="tsd-anchor"></a>
+					<h3>get<wbr>Exports<wbr>OfModule</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Exports<wbr>OfModule<span class="tsd-signature-symbol">(</span>moduleSymbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getexportsofmodule">getExportsOfModule</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2227</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>moduleSymbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getfullyqualifiedname" class="tsd-anchor"></a>
+					<h3>get<wbr>Fully<wbr>Qualified<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Fully<wbr>Qualified<wbr>Name<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getfullyqualifiedname">getFullyQualifiedName</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2207</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getindexinfooftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Index<wbr>Info<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Index<wbr>Info<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, kind<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IndexKind</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IndexInfo</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getindexinfooftype">getIndexInfoOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2153</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>kind: <span class="tsd-signature-type">IndexKind</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IndexInfo</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getindextypeoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Index<wbr>Type<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Index<wbr>Type<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, kind<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IndexKind</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getindextypeoftype">getIndexTypeOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2155</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>kind: <span class="tsd-signature-type">IndexKind</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getjsxintrinsictagnamesat" class="tsd-anchor"></a>
+					<h3>get<wbr>Jsx<wbr>Intrinsic<wbr>Tag<wbr>Names<wbr>At</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Jsx<wbr>Intrinsic<wbr>Tag<wbr>Names<wbr>At<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getjsxintrinsictagnamesat">getJsxIntrinsicTagNamesAt</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2228</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>location: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getnonnullabletype" class="tsd-anchor"></a>
+					<h3>get<wbr>Non<wbr>Nullable<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Non<wbr>Nullable<wbr>Type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getnonnullabletype">getNonNullableType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2161</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getnullabletype" class="tsd-anchor"></a>
+					<h3>get<wbr>Nullable<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Nullable<wbr>Type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeFlags</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getnullabletype">getNullableType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2160</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">TypeFlags</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getprivateidentifierpropertyoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Private<wbr>Identifier<wbr>Property<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Private<wbr>Identifier<wbr>Property<wbr>OfType<span class="tsd-signature-symbol">(</span>leftType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getprivateidentifierpropertyoftype">getPrivateIdentifierPropertyOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2152</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>leftType: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>location: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getpropertiesoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Properties<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Properties<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertiesoftype">getPropertiesOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2150</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getpropertyoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Property<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Property<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, propertyName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertyoftype">getPropertyOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2151</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>propertyName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getpropertysymbolofdestructuringassignment" class="tsd-anchor"></a>
+					<h3>get<wbr>Property<wbr>Symbol<wbr>OfDestructuring<wbr>Assignment</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Property<wbr>Symbol<wbr>OfDestructuring<wbr>Assignment<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Identifier</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getpropertysymbolofdestructuringassignment">getPropertySymbolOfDestructuringAssignment</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2199</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>location: <span class="tsd-signature-type">Identifier</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getresolvedsignature" class="tsd-anchor"></a>
+					<h3>get<wbr>Resolved<wbr>Signature</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Resolved<wbr>Signature<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CallLikeExpression</span>, candidatesOutArray<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol">[]</span>, argumentCount<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getresolvedsignature">getResolvedSignature</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2217</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>returns unknownSignature in the case of an error.
+									returns undefined if the node is not valid.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">CallLikeExpression</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> candidatesOutArray: <span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> argumentCount: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Apparent number of arguments, passed in case of a possibly incomplete call. This should come from an ArgumentListInfo. See <code>signatureHelp.ts</code>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getreturntypeofsignature" class="tsd-anchor"></a>
+					<h3>get<wbr>Return<wbr>Type<wbr>OfSignature</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Return<wbr>Type<wbr>OfSignature<span class="tsd-signature-symbol">(</span>signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getreturntypeofsignature">getReturnTypeOfSignature</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2159</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>signature: <span class="tsd-signature-type">Signature</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getrootsymbols" class="tsd-anchor"></a>
+					<h3>get<wbr>Root<wbr>Symbols</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Root<wbr>Symbols<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getrootsymbols">getRootSymbols</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2209</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getshorthandassignmentvaluesymbol" class="tsd-anchor"></a>
+					<h3>get<wbr>Shorthand<wbr>Assignment<wbr>Value<wbr>Symbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Shorthand<wbr>Assignment<wbr>Value<wbr>Symbol<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getshorthandassignmentvaluesymbol">getShorthandAssignmentValueSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2188</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The function returns the value (local variable) symbol of an identifier in the short-hand property assignment.
+									This is necessary as an identifier in short-hand property assignment can contains two meaning: property name and property value.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>location: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getsignaturefromdeclaration" class="tsd-anchor"></a>
+					<h3>get<wbr>Signature<wbr>From<wbr>Declaration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Signature<wbr>From<wbr>Declaration<span class="tsd-signature-symbol">(</span>declaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SignatureDeclaration</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsignaturefromdeclaration">getSignatureFromDeclaration</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2218</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>declaration: <span class="tsd-signature-type">SignatureDeclaration</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getsignaturesoftype" class="tsd-anchor"></a>
+					<h3>get<wbr>Signatures<wbr>OfType</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Signatures<wbr>OfType<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, kind<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SignatureKind</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsignaturesoftype">getSignaturesOfType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2154</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>kind: <span class="tsd-signature-type">SignatureKind</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Signature</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getsymbolatlocation" class="tsd-anchor"></a>
+					<h3>get<wbr>Symbol<wbr>AtLocation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Symbol<wbr>AtLocation<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolatlocation">getSymbolAtLocation</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2182</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getsymbolofexpando" class="tsd-anchor"></a>
+					<h3>get<wbr>Symbol<wbr>OfExpando</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Symbol<wbr>OfExpando<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, allowDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolofexpando">getSymbolOfExpando</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2210</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+								<li>
+									<h5>allowDeclaration: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getsymbolsinscope" class="tsd-anchor"></a>
+					<h3>get<wbr>Symbols<wbr>InScope</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Symbols<wbr>InScope<span class="tsd-signature-symbol">(</span>location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span>, meaning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SymbolFlags</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolsinscope">getSymbolsInScope</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2181</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>location: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+								<li>
+									<h5>meaning: <span class="tsd-signature-type">SymbolFlags</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getsymbolsofparameterpropertydeclaration" class="tsd-anchor"></a>
+					<h3>get<wbr>Symbols<wbr>OfParameter<wbr>Property<wbr>Declaration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Symbols<wbr>OfParameter<wbr>Property<wbr>Declaration<span class="tsd-signature-symbol">(</span>parameter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParameterDeclaration</span>, parameterName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getsymbolsofparameterpropertydeclaration">getSymbolsOfParameterPropertyDeclaration</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2183</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parameter: <span class="tsd-signature-type">ParameterDeclaration</span></h5>
+								</li>
+								<li>
+									<h5>parameterName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="gettypearguments" class="tsd-anchor"></a>
+					<h3>get<wbr>Type<wbr>Arguments</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<wbr>Arguments<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeReference</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypearguments">getTypeArguments</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2162</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">TypeReference</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="gettypeatlocation" class="tsd-anchor"></a>
+					<h3>get<wbr>Type<wbr>AtLocation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<wbr>AtLocation<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeatlocation">getTypeAtLocation</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2201</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="gettypefromtypenode" class="tsd-anchor"></a>
+					<h3>get<wbr>Type<wbr>From<wbr>Type<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<wbr>From<wbr>Type<wbr>Node<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypefromtypenode">getTypeFromTypeNode</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2202</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">TypeNode</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="gettypeofassignmentpattern" class="tsd-anchor"></a>
+					<h3>get<wbr>Type<wbr>OfAssignment<wbr>Pattern</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<wbr>OfAssignment<wbr>Pattern<span class="tsd-signature-symbol">(</span>pattern<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AssignmentPattern</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeofassignmentpattern">getTypeOfAssignmentPattern</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2200</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pattern: <span class="tsd-signature-type">AssignmentPattern</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="gettypeofsymbolatlocation" class="tsd-anchor"></a>
+					<h3>get<wbr>Type<wbr>OfSymbol<wbr>AtLocation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<wbr>OfSymbol<wbr>AtLocation<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span>, node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#gettypeofsymbolatlocation">getTypeOfSymbolAtLocation</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2148</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+								<li>
+									<h5>node: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="getwidenedtype" class="tsd-anchor"></a>
+					<h3>get<wbr>Widened<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Widened<wbr>Type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#getwidenedtype">getWidenedType</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2158</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Type</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="indexinfotoindexsignaturedeclaration" class="tsd-anchor"></a>
+					<h3>index<wbr>Info<wbr>ToIndex<wbr>Signature<wbr>Declaration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">index<wbr>Info<wbr>ToIndex<wbr>Signature<wbr>Declaration<span class="tsd-signature-symbol">(</span>indexInfo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IndexInfo</span>, kind<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IndexKind</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IndexSignatureDeclaration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#indexinfotoindexsignaturedeclaration">indexInfoToIndexSignatureDeclaration</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2170</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>indexInfo: <span class="tsd-signature-type">IndexInfo</span></h5>
+								</li>
+								<li>
+									<h5>kind: <span class="tsd-signature-type">IndexKind</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IndexSignatureDeclaration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isargumentssymbol" class="tsd-anchor"></a>
+					<h3>is<wbr>Arguments<wbr>Symbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Arguments<wbr>Symbol<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isargumentssymbol">isArgumentsSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2221</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isimplementationofoverload" class="tsd-anchor"></a>
+					<h3>is<wbr>Implementation<wbr>OfOverload</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Implementation<wbr>OfOverload<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SignatureDeclaration</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isimplementationofoverload">isImplementationOfOverload</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2219</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">SignatureDeclaration</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isoptionalparameter" class="tsd-anchor"></a>
+					<h3>is<wbr>Optional<wbr>Parameter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Optional<wbr>Parameter<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParameterDeclaration</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isoptionalparameter">isOptionalParameter</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2229</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">ParameterDeclaration</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+					<a name="istypeassignableto" class="tsd-anchor"></a>
+					<h3>is<wbr>Type<wbr>Assignable<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Type<wbr>Assignable<wbr>To<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/gratico/codesense/blob/0568778/src/ts-simple-type/is-assignable/is-assignable-to-type.ts#L9">src/ts-simple-type/is-assignable/is-assignable-to-type.ts:9</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>target: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isundefinedsymbol" class="tsd-anchor"></a>
+					<h3>is<wbr>Undefined<wbr>Symbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Undefined<wbr>Symbol<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isundefinedsymbol">isUndefinedSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2220</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isunknownsymbol" class="tsd-anchor"></a>
+					<h3>is<wbr>Unknown<wbr>Symbol</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Unknown<wbr>Symbol<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isunknownsymbol">isUnknownSymbol</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2222</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="isvalidpropertyaccess" class="tsd-anchor"></a>
+					<h3>is<wbr>Valid<wbr>Property<wbr>Access</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Valid<wbr>Property<wbr>Access<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyAccessExpression</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">QualifiedName</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ImportTypeNode</span>, propertyName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#isvalidpropertyaccess">isValidPropertyAccess</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2224</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <span class="tsd-signature-type">PropertyAccessExpression</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">QualifiedName</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">ImportTypeNode</span></h5>
+								</li>
+								<li>
+									<h5>propertyName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported">
+					<a name="runwithcancellationtoken" class="tsd-anchor"></a>
+					<h3>run<wbr>With<wbr>Cancellation<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">run<wbr>With<wbr>Cancellation<wbr>Token&lt;T&gt;<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CancellationToken</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>checker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeChecker</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#runwithcancellationtoken">runWithCancellationToken</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2240</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Depending on the operation performed, it may be appropriate to throw away the checker
+										if the cancellation token is triggered. Typically, if it is used for error checking
+									and the operation is cancelled, then it should be discarded, otherwise it is safe to keep.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">CancellationToken</span></h5>
+								</li>
+								<li>
+									<h5>cb: <span class="tsd-signature-symbol">(</span>checker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeChecker</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>checker<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeChecker</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>checker: <span class="tsd-signature-type">TypeChecker</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="signaturetosignaturedeclaration" class="tsd-anchor"></a>
+					<h3>signature<wbr>ToSignature<wbr>Declaration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">signature<wbr>ToSignature<wbr>Declaration<span class="tsd-signature-symbol">(</span>signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Signature</span>, kind<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SyntaxKind</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">SignatureDeclaration</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>typeArguments<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">NodeArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#signaturetosignaturedeclaration">signatureToSignatureDeclaration</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2166</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>signature: <span class="tsd-signature-type">Signature</span></h5>
+								</li>
+								<li>
+									<h5>kind: <span class="tsd-signature-type">SyntaxKind</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">SignatureDeclaration</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>typeArguments<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">NodeArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="signaturetostring" class="tsd-anchor"></a>
+					<h3>signature<wbr>ToString</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">signature<wbr>ToString<span class="tsd-signature-symbol">(</span>signature<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Signature</span>, enclosingDeclaration<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Node</span>, flags<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TypeFormatFlags</span>, kind<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SignatureKind</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#signaturetostring">signatureToString</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2203</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>signature: <span class="tsd-signature-type">Signature</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> enclosingDeclaration: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flags: <span class="tsd-signature-type">TypeFormatFlags</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> kind: <span class="tsd-signature-type">SignatureKind</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="symboltoentityname" class="tsd-anchor"></a>
+					<h3>symbol<wbr>ToEntity<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">symbol<wbr>ToEntity<wbr>Name<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span>, meaning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SymbolFlags</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EntityName</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoentityname">symbolToEntityName</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2172</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+								<li>
+									<h5>meaning: <span class="tsd-signature-type">SymbolFlags</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EntityName</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="symboltoexpression" class="tsd-anchor"></a>
+					<h3>symbol<wbr>ToExpression</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">symbol<wbr>ToExpression<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span>, meaning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SymbolFlags</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Expression</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoexpression">symbolToExpression</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2174</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+								<li>
+									<h5>meaning: <span class="tsd-signature-type">SymbolFlags</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Expression</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="symboltoparameterdeclaration" class="tsd-anchor"></a>
+					<h3>symbol<wbr>ToParameter<wbr>Declaration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">symbol<wbr>ToParameter<wbr>Declaration<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParameterDeclaration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltoparameterdeclaration">symbolToParameterDeclaration</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2178</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ParameterDeclaration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="symboltostring" class="tsd-anchor"></a>
+					<h3>symbol<wbr>ToString</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">symbol<wbr>ToString<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span>, enclosingDeclaration<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Node</span>, meaning<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SymbolFlags</span>, flags<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">SymbolFormatFlags</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltostring">symbolToString</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2205</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> enclosingDeclaration: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> meaning: <span class="tsd-signature-type">SymbolFlags</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flags: <span class="tsd-signature-type">SymbolFormatFlags</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="symboltotypeparameterdeclarations" class="tsd-anchor"></a>
+					<h3>symbol<wbr>ToType<wbr>Parameter<wbr>Declarations</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">symbol<wbr>ToType<wbr>Parameter<wbr>Declarations<span class="tsd-signature-symbol">(</span>symbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TypeParameterDeclaration</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#symboltotypeparameterdeclarations">symbolToTypeParameterDeclarations</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2176</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>symbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">NodeArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">TypeParameterDeclaration</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="trygetmemberinmoduleexports" class="tsd-anchor"></a>
+					<h3>try<wbr>Get<wbr>Member<wbr>InModule<wbr>Exports</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">try<wbr>Get<wbr>Member<wbr>InModule<wbr>Exports<span class="tsd-signature-symbol">(</span>memberName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, moduleSymbol<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#trygetmemberinmoduleexports">tryGetMemberInModuleExports</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2231</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>memberName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>moduleSymbol: <span class="tsd-signature-type">Symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Symbol</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="typeparametertodeclaration" class="tsd-anchor"></a>
+					<h3>type<wbr>Parameter<wbr>ToDeclaration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">type<wbr>Parameter<wbr>ToDeclaration<span class="tsd-signature-symbol">(</span>parameter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeParameter</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeParameterDeclaration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typeparametertodeclaration">typeParameterToDeclaration</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2180</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parameter: <span class="tsd-signature-type">TypeParameter</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TypeParameterDeclaration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="typepredicatetostring" class="tsd-anchor"></a>
+					<h3>type<wbr>Predicate<wbr>ToString</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">type<wbr>Predicate<wbr>ToString<span class="tsd-signature-symbol">(</span>predicate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypePredicate</span>, enclosingDeclaration<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Node</span>, flags<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TypeFormatFlags</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typepredicatetostring">typePredicateToString</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2206</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>predicate: <span class="tsd-signature-type">TypePredicate</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> enclosingDeclaration: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flags: <span class="tsd-signature-type">TypeFormatFlags</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="typetostring" class="tsd-anchor"></a>
+					<h3>type<wbr>ToString</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">type<wbr>ToString<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, enclosingDeclaration<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Node</span>, flags<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TypeFormatFlags</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typetostring">typeToString</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2204</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> enclosingDeclaration: <span class="tsd-signature-type">Node</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flags: <span class="tsd-signature-type">TypeFormatFlags</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+					<a name="typetotypenode" class="tsd-anchor"></a>
+					<h3>type<wbr>ToType<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">type<wbr>ToType<wbr>Node<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Type</span>, enclosingDeclaration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span>, flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html">TypeCheckerWithInternals</a>.<a href="_ts_simple_type_is_assignable_is_assignable_to_type_.typecheckerwithinternals.html#typetotypenode">typeToTypeNode</a></p>
+								<ul>
+									<li>Defined in node_modules/typescript/lib/typescript.d.ts:2164</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Note that the resulting nodes cannot be checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">Type</span></h5>
+								</li>
+								<li>
+									<h5>enclosingDeclaration: <span class="tsd-signature-type">Node</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+								<li>
+									<h5>flags: <span class="tsd-signature-type">NodeBuilderFlags</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TypeNode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
